@@ -27,4 +27,10 @@ public class CityController {
 		m.put("hah", c);
 		return m;
 	}
+	
+	@RequestMapping("testCityListPage")
+	public String testCityListPage(){
+		
+		return "city/cityList";
+	}
 }
