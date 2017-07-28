@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 
-	<display-name>SSM</display-name>
+	<display-name>mavenSSM</display-name>
 
 	<!-- needed for ContextLoaderListener -->
 	<context-param>
@@ -29,8 +29,6 @@
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
 	
-	
-
 	<!-- springmvc encoding filter -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -62,11 +60,8 @@
 		<url-pattern>/</url-pattern><!-- http://www.cnblogs.com/fangjian0423/p/servletContainer-tomcat-urlPattern.html#springmvc   还没看懂 -->
 	</servlet-mapping>
 
-
-
 	<welcome-file-list>
-		<welcome-file>content/hello.jsp</welcome-file>
+		<welcome-file>common/pages/hello.jsp</welcome-file>
 	</welcome-file-list>
 
 </web-app>
-	
