@@ -66,11 +66,25 @@
 		</property>
     </bean>
 
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+<!--     DAO接口所在包名，Spring会自动查找其下的类     这是不用通用Mapper的配置。问题在于 通用mapper的使用	 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.albert.mavenSSM.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
+
+	<!-- Mapper接口配置扫描器    通用mapper是这么配置的。-->
+	<!-- <bean id="mapperScanner" class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+		扫描com.isoft91.*这个包以及它的子包下的所有映射接口类
+		<property name="basePackage" value="com.albert.*" />
+
+		扫描spring @Repository 注解类
+		<property name="annotationClass" value="org.springframework.stereotype.Repository"></property>
+		<property name="properties">
+			<value>
+				mappers=com.isoft91.web.base.repository.BaseCommonSingleTableRepository
+			</value>
+		</property>
+	</bean> -->
 
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
     <bean id="transactionManager"
